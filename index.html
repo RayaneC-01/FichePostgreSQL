@@ -1,153 +1,357 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fiche Récapitulative PostgreSQL</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header>
-        <h1>Fiche Récapitulative PostgreSQL</h1>
+      <h1>Fiche Récapitulative PostgreSQL</h1>
     </header>
     <main>
-        <section>
-            <h2>Introduction</h2>
-            <p>PostgreSQL est un système de gestion de base de données relationnelle puissant et open source. Voici un récapitulatif des commandes et requêtes SQL les plus courantes.</p>
-        </section>
+      <section>
+        <h2>Introduction</h2>
+        <p>
+          PostgreSQL est un système de gestion de base de données relationnelle
+          puissant et open source. Voici un récapitulatif des commandes et
+          requêtes SQL les plus courantes.
+        </p>
+      </section>
 
-        <section>
-            <h2>Commandes de Base</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Commande</th>
-                        <th>Description</th>
-                        <th>Exemple</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><code>CREATE DATABASE</code></td>
-                        <td>Créer une nouvelle base de données</td>
-                        <td><code>CREATE DATABASE nom_de_la_base;</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>CREATE TABLE</code></td>
-                        <td>Créer une nouvelle table</td>
-                        <td><code>CREATE TABLE nom_de_la_table (id SERIAL PRIMARY KEY, nom VARCHAR(100));</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>INSERT INTO</code></td>
-                        <td>Insérer des données dans une table</td>
-                        <td><code>INSERT INTO nom_de_la_table (nom) VALUES ('Valeur');</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>SELECT</code></td>
-                        <td>Récupérer des données depuis une table</td>
-                        <td><code>SELECT * FROM nom_de_la_table;</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>UPDATE</code></td>
-                        <td>Mettre à jour des données dans une table</td>
-                        <td><code>UPDATE nom_de_la_table SET nom = 'Nouvelle Valeur' WHERE id = 1;</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>DELETE FROM</code></td>
-                        <td>Supprimer des données d'une table</td>
-                        <td><code>DELETE FROM nom_de_la_table WHERE id = 1;</code></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+      <section>
+        <h2>Commandes de Base</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Commande</th>
+              <th>Description</th>
+              <th>Exemple</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>CREATE DATABASE</code></td>
+              <td>Créer une nouvelle base de données</td>
+              <td><code>CREATE DATABASE nom_de_la_base;</code></td>
+            </tr>
+            <tr>
+              <td><code>CREATE TABLE</code></td>
+              <td>Créer une nouvelle table</td>
+              <td>
+                <code
+                  >CREATE TABLE nom_de_la_table (id SERIAL PRIMARY KEY, nom
+                  VARCHAR(100));</code
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><code>INSERT INTO</code></td>
+              <td>Insérer des données dans une table</td>
+              <td>
+                <code
+                  >INSERT INTO nom_de_la_table (nom) VALUES ('Valeur');</code
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><code>SELECT</code></td>
+              <td>Récupérer des données depuis une table</td>
+              <td><code>SELECT * FROM nom_de_la_table;</code></td>
+            </tr>
+            <tr>
+              <td><code>UPDATE</code></td>
+              <td>Mettre à jour des données dans une table</td>
+              <td>
+                <code
+                  >UPDATE nom_de_la_table SET nom = 'Nouvelle Valeur' WHERE id =
+                  1;</code
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><code>DELETE FROM</code></td>
+              <td>Supprimer des données d'une table</td>
+              <td><code>DELETE FROM nom_de_la_table WHERE id = 1;</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-        <section>
-            <h2>Commandes Avancées</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Commande</th>
-                        <th>Description</th>
-                        <th>Exemple</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><code>JOIN</code></td>
-                        <td>Joindre des tables</td>
-                        <td><code>SELECT * FROM table1 JOIN table2 ON table1.id = table2.id;</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>GROUP BY</code></td>
-                        <td>Grouper des données</td>
-                        <td><code>SELECT COUNT(*), nom FROM table GROUP BY nom;</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>ORDER BY</code></td>
-                        <td>Ordonner des données</td>
-                        <td><code>SELECT * FROM table ORDER BY nom ASC;</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>CREATE INDEX</code></td>
-                        <td>Créer un index pour accélérer les recherches</td>
-                        <td><code>CREATE INDEX index_nom ON table(nom);</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>EXPLAIN</code></td>
-                        <td>Afficher le plan d'exécution d'une requête</td>
-                        <td><code>EXPLAIN SELECT * FROM table;</code></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+      <section>
+        <h2>Commandes Avancées</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Commande</th>
+              <th>Description</th>
+              <th>Exemple</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>JOIN</code></td>
+              <td>Joindre des tables</td>
+              <td>
+                <code
+                  >SELECT * FROM table1 JOIN table2 ON table1.id =
+                  table2.id;</code
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><code>GROUP BY</code></td>
+              <td>Grouper des données</td>
+              <td>
+                <code>SELECT COUNT(*), nom FROM table GROUP BY nom;</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>ORDER BY</code></td>
+              <td>Ordonner des données</td>
+              <td><code>SELECT * FROM table ORDER BY nom ASC;</code></td>
+            </tr>
+            <tr>
+              <td><code>CREATE INDEX</code></td>
+              <td>Créer un index pour accélérer les recherches</td>
+              <td><code>CREATE INDEX index_nom ON table(nom);</code></td>
+            </tr>
+            <tr>
+              <td><code>EXPLAIN</code></td>
+              <td>Afficher le plan d'exécution d'une requête</td>
+              <td><code>EXPLAIN SELECT * FROM table;</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-        <section>
-            <h2>Fonctions Utiles</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Fonction</th>
-                        <th>Description</th>
-                        <th>Exemple</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><code>NOW()</code></td>
-                        <td>Obtenir la date et l'heure actuelles</td>
-                        <td><code>SELECT NOW();</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>COUNT()</code></td>
-                        <td>Compter le nombre de lignes</td>
-                        <td><code>SELECT COUNT(*) FROM table;</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>AVG()</code></td>
-                        <td>Calculer la moyenne</td>
-                        <td><code>SELECT AVG(colonne) FROM table;</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>SUM()</code></td>
-                        <td>Calculer la somme</td>
-                        <td><code>SELECT SUM(colonne) FROM table;</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>MAX()</code></td>
-                        <td>Obtenir la valeur maximale</td>
-                        <td><code>SELECT MAX(colonne) FROM table;</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>MIN()</code></td>
-                        <td>Obtenir la valeur minimale</td>
-                        <td><code>SELECT MIN(colonne) FROM table;</code></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+      <section>
+        <h2>Types de Données</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Description</th>
+              <th>Exemple</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>INTEGER</code></td>
+              <td>Entier</td>
+              <td><code>age INTEGER</code></td>
+            </tr>
+            <tr>
+              <td><code>VARCHAR(n)</code></td>
+              <td>Chaîne de caractères de longueur variable</td>
+              <td><code>nom VARCHAR(100)</code></td>
+            </tr>
+            <tr>
+              <td><code>TEXT</code></td>
+              <td>Texte de longueur illimitée</td>
+              <td><code>description TEXT</code></td>
+            </tr>
+            <tr>
+              <td><code>DATE</code></td>
+              <td>Date</td>
+              <td><code>date_naissance DATE</code></td>
+            </tr>
+            <tr>
+              <td><code>TIMESTAMP</code></td>
+              <td>Date et heure</td>
+              <td><code>created_at TIMESTAMP</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Transactions</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Commande</th>
+              <th>Description</th>
+              <th>Exemple</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>BEGIN</code></td>
+              <td>Commencer une transaction</td>
+              <td><code>BEGIN;</code></td>
+            </tr>
+            <tr>
+              <td><code>COMMIT</code></td>
+              <td>Valider une transaction</td>
+              <td><code>COMMIT;</code></td>
+            </tr>
+            <tr>
+              <td><code>ROLLBACK</code></td>
+              <td>Annuler une transaction</td>
+              <td><code>ROLLBACK;</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Vues</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Commande</th>
+              <th>Description</th>
+              <th>Exemple</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>CREATE VIEW</code></td>
+              <td>Créer une vue</td>
+              <td>
+                <code>CREATE VIEW vue_nom AS SELECT nom, age FROM table;</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>DROP VIEW</code></td>
+              <td>Supprimer une vue</td>
+              <td><code>DROP VIEW vue_nom;</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Index</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Commande</th>
+              <th>Description</th>
+              <th>Exemple</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>CREATE INDEX</code></td>
+              <td>Créer un index</td>
+              <td><code>CREATE INDEX index_nom ON table(nom);</code></td>
+            </tr>
+            <tr>
+              <td><code>DROP INDEX</code></td>
+              <td>Supprimer un index</td>
+              <td><code>DROP INDEX index_nom;</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Fonctions Utiles</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Fonction</th>
+              <th>Description</th>
+              <th>Exemple</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>NOW()</code></td>
+              <td>Obtenir la date et l'heure actuelles</td>
+              <td><code>SELECT NOW();</code></td>
+            </tr>
+            <tr>
+              <td><code>COUNT()</code></td>
+              <td>Compter le nombre de lignes</td>
+              <td><code>SELECT COUNT(*) FROM table;</code></td>
+            </tr>
+            <tr>
+              <td><code>AVG()</code></td>
+              <td>Calculer la moyenne</td>
+              <td><code>SELECT AVG(colonne) FROM table;</code></td>
+            </tr>
+            <tr>
+              <td><code>SUM()</code></td>
+              <td>Calculer la somme</td>
+              <td><code>SELECT SUM(colonne) FROM table;</code></td>
+            </tr>
+            <tr>
+              <td><code>MAX()</code></td>
+              <td>Obtenir la valeur maximale</td>
+              <td><code>SELECT MAX(colonne) FROM table;</code></td>
+            </tr>
+            <tr>
+              <td><code>MIN()</code></td>
+              <td>Obtenir la valeur minimale</td>
+              <td><code>SELECT MIN(colonne) FROM table;</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Requêtes Complexes</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Requête</th>
+              <th>Description</th>
+              <th>Exemple</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>Subquery</code></td>
+              <td>Utiliser une sous-requête</td>
+              <td>
+                <code
+                  >SELECT nom FROM table WHERE id IN (SELECT id FROM
+                  autre_table);</code
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><code>CTE</code></td>
+              <td>Common Table Expression</td>
+              <td>
+                <code
+                  >WITH subquery AS (SELECT * FROM table) SELECT * FROM
+                  subquery;</code
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><code>Window Functions</code></td>
+              <td>Utiliser des fonctions de fenêtre</td>
+              <td>
+                <code
+                  >SELECT nom, AVG(salaire) OVER (PARTITION BY departement) FROM
+                  employes;</code
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </main>
     <footer>
-        <p>Fiche récapitulative PostgreSQL - © 2024 Votre Nom</p>
+      <p>Fiche récapitulative PostgreSQL - © 2024</p>
     </footer>
-</body>
+
+    <!-- Bouton To Top -->
+    <button id="toTopButton" title="Retour en haut">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+  </body>
 </html>
